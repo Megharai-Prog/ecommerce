@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Professional Navbar</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <h1 class="site-name">ShopEase</h1>
+      <input type="text" placeholder="Search" class="search-box" />
+      <div class="welcome-user" id="welcomeUser"></div> <!-- Here will display the welcome message -->
+    </div>
+    <nav class="navbar">
+      <a href="./index.html"><div class="nav-item">Home</div></a>
+      <a href="./Product/products.html"><div class="nav-item">Products</div></a>
+      <a href="./Service/Services.html"><div class="nav-item">Services</div></a>
+      <a href="./Login.html"><div class="nav-item">Login/Registration</div></a>
+       <a href="./contact/contact_us.Html"><div class="nav-item">ContactUs</div></a>
+      <a href="./ViewProfile/Viewprofile.html"><div class="nav-item">User Profile</div></a>
+      <a href="./Aboutus/About.html"><div class="nav-item">About Us</div></a>
+
+      <button id="cartToggleBtn" class="cartToggleBtn">🛒 Cart</button>
+
+    </nav>
+  </header>
+  
+<!-- hero section -->
+<div id="cartAlert" class="cart-alert">✅ Product added to cart!</div>
+<div id="cartAlertadd" class="cart-alert">⚠️ Product already in cart!</div>
+
+<main>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-heading">Welcome to ShopEase</h1>
+            <p class="hero-text">
+                Discover a wide range of products at unbeatable prices. ShopEase offers everything from the latest electronics to fashionable clothing and accessories. Enjoy a seamless shopping experience with our easy-to-use platform, secure payment options, and fast delivery. Join millions of satisfied customers and start your shopping journey with ShopEase today!
+              </p>
+
+              <div class="hero-buttons">
+                <a href="#" class="hero-btn primary">Shop Now</a>
+                <a href="#" class="hero-btn secondary">Learn More</a>
+              </div>
+        </section>
+        </div>
+        
+</main>
+
+
+
+
+<!-- Services Section -->
+<section class="services-section">
+  <div class="services-heading">
+    <h2>Our <span>Services</span></h2>
+    <p>Discover how we bring value to your shopping experience with top-notch service.</p>
+  </div>
+
+  <div class="services-container">
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2919/2919600.png" alt="Fast Delivery">
+      <h3>Fast Delivery</h3>
+      <p>We deliver your products swiftly with real-time tracking and SMS alerts.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" alt="Secure Payments">
+      <h3>Secure Payments</h3>
+      <p>Your transactions are encrypted and 100% secure using trusted gateways.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1828/1828911.png" alt="24/7 Support">
+      <h3>24/7 Support</h3>
+      <p>Need help? Our expert support team is always available, day or night.</p>
+    </div>
+
+    <div class="service-card">
+      <img src="https://cdn-icons-png.flaticon.com/512/679/679922.png" alt="Easy Returns">
+      <h3>Easy Returns</h3>
+      <p>Hassle-free returns and instant refunds to give you a stress-free experience.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- //products -->
+<div class="products">
+
+
+    <h1>Products</h1>
+
+    <div class="main-container">
+      <!-- Group 1 -->
+      <div class="group-card">
+        <div class="product-grid">
+          <div class="product"  data-id="1" data-name="Shirt 1" data-price="80">
+            <img src="./images/a.JPG" alt="Shirt">
+            <div class="product-name">Shirt 1</div>
+            <div class="product-price">₦80</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="2" data-name="Shirt 2" data-price="75">
+            <img src="./images/aa.jpg" alt="Shirt">
+            <div class="product-name">Shirt 2</div>
+            <div class="product-price">₦75</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="3" data-name="Shirt 3" data-price="120">
+            <img src="./images/b.JPG" alt="Shirt">
+            <div class="product-name">Shirt 3</div>
+            <div class="product-price">₦120</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="4" data-name="Shirt 4" data-price="99">
+            <img src="./images/c.JPG" alt="Shirt">
+            <div class="product-name">Shirt 4</div>
+            <div class="product-price">₦99</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Group 2 -->
+      <div class="group-card">
+        <div class="product-grid">
+          <div class="product"  data-id="5" data-name="Shirt 5" data-price="90">
+            <img src="./images/d.JPG" alt="Shirt">
+            <div class="product-name">Shirt 5</div>
+            <div class="product-price">₦90</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="6" data-name="Shirt 6" data-price="85">
+            <img src="./images/e.jpg" alt="Shirt">
+            <div class="product-name">Shirt 6</div>
+            <div class="product-price">₦85</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="7" data-name="Shirt 7" data-price="70">
+            <img src="./images/f.JPG" alt="Shirt">
+            <div class="product-name">Shirt 7</div>
+            <div class="product-price">₦70</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="8" data-name="Shirt 8" data-price="88">
+            <img src="./images/g.JPG" alt="Shirt">
+            <div class="product-name">Shirt 8</div>
+            <div class="product-price">₦88</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Group 3 -->
+      <div class="group-card">
+        <div class="product-grid">
+          <div class="product"  data-id="9" data-name="Shirt 9" data-price="105 ">
+            <img src="./images/h.JPG" alt="Shirt">
+            <div class="product-name">Shirt 9</div>
+            <div class="product-price">₦105</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="10" data-name="Shirt 10" data-price="95"> 
+            <img src="./images/i.JPG" alt="Shirt">
+            <div class="product-name">Shirt 10</div>
+            <div class="product-price">₦95</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="11" data-name="Shirt 11" data-price="92">
+            <img src="./images/j.jpg" alt="Shirt">
+            <div class="product-name">Shirt 11</div>
+            <div class="product-price">₦92</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+          <div class="product"  data-id="12" data-name="Shirt 12" data-price="110">
+            <img src="./images/main.JPG" alt="Shirt">
+            <div class="product-name">Shirt 12</div>
+            <div class="product-price">₦110</div>
+            <button class="add-btn">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+
+  <!-- Slide-out Cart -->
+    <div class="cart-slide" id="cartPanel">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCartBtn">&times;</button>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <p>Total: ₦<span id="totalPrice">0</span></p>
+        </div>
+       <a href="payment/Shipping.html">
+  <button class="checkout-btn">Checkout</button>
+</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+
+
+
+
+     <section class="map-section">
+    <div class="map-container">
+      <h2>📍 Visit Our Store in <span>New York</span></h2>
+      <p>Come say hello at our New York location. Find us below!</p>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193572.1321390078!2d-74.11808665537158!3d40.70583164046242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xe6c7b8e3bbef8c9f!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1715000000000!5m2!1sen!2s"
+          width="100%"
+          height="400"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+
+<!-- footer -->
+
+<footer class="footer" style="margin-top: 50px;">
+    <div class="footer-container">
+      <div class="footer-section about">
+        <h2 class="logo-text">ShopZone</h2>
+        <p>Your one-stop destination for stylish and affordable fashion. Discover, shop, and stay trendy with ShopZone.</p>
+      </div>
+  
+      
+  
+      <!-- Contact -->
+      <div class="footer-section contact">
+        <h3>Contact Us</h3>
+        <p><strong>Email:</strong> support@shopzone.com</p>
+        <p><strong>Phone:</strong> +1 234 567 890</p>
+        <p><strong>Address:</strong> 123 Fashion Ave, NY, USA</p>
+        <div class="socials">
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/facebook-new.png" alt="Facebook"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/twitter.png" alt="Twitter"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/instagram-new.png" alt="Instagram"></a>
+          <a href="#"><img src="https://img.icons8.com/ios-filled/30/ffffff/linkedin.png" alt="LinkedIn"></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      &copy; 2025 ShopZone
+    </div>
+  </footer>
+  
+  <script src="app.js"></script>
+      <script src="script.js"></script>
+
+
+</body>
+</html>
