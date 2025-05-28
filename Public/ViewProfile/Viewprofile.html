@@ -86,26 +86,24 @@
     }
 
     // Search Functionality
-    document.getElementById("searchInput").addEventListener("keypress", function (e) {
-      if (e.key === "Enter") {
-        const query = e.target.value.toLowerCase();
-        if (!query) return;
+    document.getElementById("searchInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    const query = e.target.value.trim().toLowerCase();
+    if (!query) return;
 
-        if (query.includes("product")) {
-          window.location.href = "../Product/products.html";
-        } else if (query.includes("service")) {
-          window.location.href = "../Service/Services.html";
-        } else if (query.includes("login")) {
-          window.location.href = "../Login.html";
-        } else if (query.includes("contact")) {
-          window.location.href = "../contact/contact_us.html";
-        } else if (query.includes("about")) {
-          window.location.href = "../Aboutus/About.html";
-        } else {
-          alert("No match found for: " + query);
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+    if (query.includes("product")) {
+      window.location.href = "../Product/products.html";
+    } else if (query.includes("service")) {
+      window.location.href = "../Service/Services.html";
+    } else if (query.includes("login")) {
+      window.location.href = "../Login.html";
+    } else if (query.includes("contact")) {
+      window.location.href = "../contact/contact_us.html";
+    } else if (query.includes("about")) {
+      window.location.href = "../Aboutus/About.html";
+    } else {
+      alert("No match found for: " + query);
+    }
+  }
+});
+
