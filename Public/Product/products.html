@@ -12,7 +12,9 @@
   <header>
     <div class="top-bar">
         <h1 class="site-name">ShopEase</h1>
-        <input type="text" placeholder="Search" class="search-box" />
+        <input type="text" id="searchInput" placeholder="Search" class="search-box" />
+<button id="searchBtn" class="search-button">Search</button>
+
       </div>
       <nav class="navbar">
         <a href="../index.html">
@@ -271,3 +273,32 @@
 
 </body>
 </html>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    const params = new URLSearchParams(window.location.search);
+    const searchQuery = params.get("search");
+
+    const allProducts = document.querySelectorAll(".product");
+
+    if (searchQuery) {
+      const q = searchQuery.toLowerCase();
+      let found = false;
+
+      allProducts.forEach(product => {
+        const name = product.querySelector(".product-name").textContent.toLowerCase();
+        if (!name.includes(q)) {
+          product.style.display = "none";
+        } else {
+          found = true;
+        }
+      });
+
+      if (!found) {
+        const noMatch = document.createElement("p");
+        noMatch.textContent = "No matching products found.";
+        noMatch.style.textAlign = "center";
+        document.querySelector(".products").appendChild(noMatch);
+      }
+    }
+  });
+</script>
