@@ -81,31 +81,29 @@
   </footer>
 
   <!-- JS Logic -->
-  <script>
-    function logout() {
-      alert("🔒 Logged out!");
-      window.location.href = "../Login.html";
-    }
-
-    // Search Functionality
-    document.getElementById("searchInput").addEventListener("keydown", function (e) {
-  if (e.key === "Enter") {
-    const query = e.target.value.trim().toLowerCase();
-    if (!query) return;
-
-    if (query.includes("product")) {
-      window.location.href = "../Product/products.html";
-    } else if (query.includes("service")) {
-      window.location.href = "../Service/Services.html";
-    } else if (query.includes("login")) {
-      window.location.href = "../Login.html";
-    } else if (query.includes("contact")) {
-      window.location.href = "../contact/contact_us.html";
-    } else if (query.includes("about")) {
-      window.location.href = "../Aboutus/About.html";
-    } else {
-      alert("No match found for: " + query);
-    }
+ <script>
+  // Logout logic
+  function logout() {
+    alert("🔒 Logged out!");
+    window.location.href = "../Login.html";
   }
-});
 
+  // Search logic
+  window.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("searchInput");
+    const searchBtn = document.getElementById("searchBtn");
+
+    function handleSearch() {
+      const query = searchInput.value.trim().toLowerCase();
+      if (!query) return alert("Please enter a product name to search.");
+      window.location.href = `../Product/products.html?search=${encodeURIComponent(query)}`;
+    }
+
+    searchBtn?.addEventListener("click", handleSearch);
+    searchInput?.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        handleSearch();
+      }
+    });
+  });
+</script>
