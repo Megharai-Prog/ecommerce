@@ -274,33 +274,54 @@
 </body>
 </html>
 <script>
-  window.addEventListener("DOMContentLoaded", function () {
-    const params = new URLSearchParams(window.location.search);
-    const searchQuery = params.get("search");
+ window.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const searchQuery = params.get("search");
+  const allProducts = document.querySelectorAll(".product");
 
-    const allProducts = document.querySelectorAll(".product");
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    let found = false;
 
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      let found = false;
-
-      allProducts.forEach(product => {
-        const name = product.querySelector(".product-name").textContent.toLowerCase();
+    allProducts.forEach(product => {
+      const nameEl = product.querySelector(".product-name");
+      if (nameEl) {
+        const name = nameEl.textContent.toLowerCase();
         if (!name.includes(q)) {
           product.style.display = "none";
         } else {
           found = true;
         }
-      });
-
-      if (!found) {
-        const noMatch = document.createElement("p");
-        noMatch.textContent = "No matching products found.";
-        noMatch.style.textAlign = "center";
-        document.querySelector(".products").appendChild(noMatch);
       }
+    });
+
+    if (!found) {
+      const noMatch = document.createElement("p");
+      noMatch.textContent = "No matching products found.";
+      noMatch.style.textAlign = "center";
+      document.querySelector(".products")?.appendChild(noMatch);
     }
+  }
+
+  // search bar functionality
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+
+  function handleSearch() {
+    const query = searchInput.value.trim();
+    if (!query) {
+      alert("Please enter a product name.");
+      return;
+    }
+    window.location.href = `products.html?search=${encodeURIComponent(query)}`;
+  }
+
+  searchBtn?.addEventListener("click", handleSearch);
+  searchInput?.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") handleSearch();
   });
+});
+
 </script>
 </body>
 </html>  
