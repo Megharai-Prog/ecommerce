@@ -1,0 +1,9 @@
+# Node modules
+node_modules/
+
+# Logs
+*.log
+
+# SQLite database backups or lock files (optional)
+*.sqlite
+*.sqlite-journal
