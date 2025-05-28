@@ -9,12 +9,23 @@ const contactroute = require('./routes/contact');
 const { Country, State, City } = require("country-state-city");
 const cors = require("cors");
 
-
-
 const app = express();
-const PORT = 3000;
-app.use(cors());
 
+// ✅ Fix: Use dynamic port for Glitch compatibility
+const PORT = process.env.PORT || 3000;
+
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// ✅ Fix: Correct case for static folder ('Public' not 'public')
+app.use(express.static(path.join(__dirname, 'Public')));
+
+// ✅ Add route to serve index.html at root URL
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'Public', 'index.html'));
+});
+
+// Country, State, City API endpoints
 app.get("/countries", (req, res) => {
   const countries = Country.getAllCountries();
   res.json(countries);
@@ -30,10 +41,10 @@ app.get("/cities/:countryCode/:stateCode", (req, res) => {
   res.json(cities);
 });
 
-
-// Create db directory if not exists
+// ✅ Ensure database directory exists
 if (!fs.existsSync('./db')) fs.mkdirSync('./db');
 
+// Connect to SQLite database
 const db = new sqlite3.Database('./db/database.db', (err) => {
   if (err) return console.error(err.message);
   console.log('✅ Connected to SQLite database');
@@ -51,6 +62,7 @@ db.run(`
   )
 `);
 
+// Create contact_messages table
 db.run(`
   CREATE TABLE IF NOT EXISTS contact_messages (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -62,14 +74,10 @@ db.run(`
   )
 `);
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
+// Route handlers
 app.use(signupRoutes);
 app.use(loginRoutes);
 app.use(contactroute);
-
-
 
 // Start server
 app.listen(PORT, () => {
